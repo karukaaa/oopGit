@@ -12,7 +12,7 @@ public abstract class User implements Comparable<User>{
 	
 	//check how to make id final
 	public int getId() {
-		System.out.println("diffBr");
+
 		return id;
 	}
 
@@ -20,6 +20,7 @@ public abstract class User implements Comparable<User>{
 		return name;
 	}
 	public void setName(String name) {
+		System.out.println("diffBr");
 		this.name = name;
 	}
 	public String getLastName() {
