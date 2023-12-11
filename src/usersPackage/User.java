@@ -12,6 +12,7 @@ public abstract class User implements Comparable<User>{
 	
 	//check how to make id final
 	public int getId() {
+		System.out.println(" ");
 		return id;
 	}
 
