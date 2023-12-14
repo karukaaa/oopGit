@@ -1,18 +1,39 @@
 package usersPackage;
 
+import java.util.Vector;
+import researchPackage.*;
+
 public abstract class User implements Comparable<User>{
 	public int id;
 	public String name;
 	public String lastName;
 	private int password;
 	public Languages language;
-	//public Vector<ResearchJournal> subscriptions;
+	public Vector<ResearchJournal> subscriptions;
 	
 	//getters for subscriptions
 	
 	//check how to make id final
+	
+	{
+		language = Languages.EN;
+		subscriptions = new Vector<>();
+	}
+	
+	public User() {
+		
+	}
+	
+	public User(String name) {
+		this.name = name;
+	}
+	
+	public User(String name, String lastName) {
+		this.name = name;
+		this.lastName = lastName;
+	}
+	
 	public int getId() {
-		System.out.println(" ");
 		return id;
 	}
 
@@ -20,7 +41,6 @@ public abstract class User implements Comparable<User>{
 		return name;
 	}
 	public void setName(String name) {
-		System.out.println("diffBr");
 		this.name = name;
 	}
 	public String getLastName() {
@@ -43,10 +63,10 @@ public abstract class User implements Comparable<User>{
 		this.language = language;
 	}
 	
-	public void subscribeToJournal(/*ResearchJournal*/) {
+	public void subscribeToJournal(ResearchJournal r) {
 		//subscription to a journal
 	}
-	public void unsubscribeToJournal(/*ResearchJournal*/) {
+	public void unsubscribeToJournal(ResearchJournal r) {
 		//unsubscription to a journal
 	}
 	
