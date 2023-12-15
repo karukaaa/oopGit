@@ -34,6 +34,9 @@ public class Student extends User implements Researcher{
 	}
 	
 	
+	public Map<Course, Mark> getMarks() {
+		return marks;
+	}
 	@Override
 	public void submitPapers() {
 		System.out.println();
@@ -124,9 +127,6 @@ public class Student extends User implements Researcher{
         System.out.println("Viewing news as a student.");
     }
 
-    public void receiveMark(Mark mark) {
-        marks.put(mark.getCourse(), mark);
-    }
 
     public void checkMarks() {
         System.out.println("Marks for " + name + ":");
@@ -143,8 +143,9 @@ public class Student extends User implements Researcher{
         }
     }
     
-    private void enrollCourse(Course course) {
+    public void enrollCourse(Course course) {
         courses.add(course);
+        marks.put(course, new Mark(course, 0));
     }
 
 	

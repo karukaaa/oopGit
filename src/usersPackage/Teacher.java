@@ -25,23 +25,23 @@ public class Teacher extends User{
     	super(name);
     }
 
-    public void assignMark(Student student, Course course, int score) {
+    public void putMark(Student student, Course course, int score, MarkTypes type) {
         if (marksToAssign.containsKey(course)) {
-            student.receiveMark(new Mark(course, score));
+        	
+        	if(type==MarkTypes.ATT1) student.getMarks().get(course).setFirstAttestation(score);
+        	else if (type==MarkTypes.ATT2) student.getMarks().get(course).setSecondAttestation(score);
+        	else if (type==MarkTypes.MIDTERM) student.getMarks().get(course).setMidtermPoint(score);
+        	else if (type==MarkTypes.ENDTERM) student.getMarks().get(course).setEndtermPoint(score);
+        	else if (type==MarkTypes.FINAL) student.getMarks().get(course).setFinalPoint(score);
+        	else student.getMarks().get(course).setScore(score);
+            
+            
             System.out.println("Mark assigned successfully.");
         } else {
             System.out.println("You are not assigned to teach this course.");
         }
     }
 
-    public void putMark(Student student, Course course, int score) {
-        if (marksToAssign.containsKey(course)) {
-            student.receiveMark(new Mark(course, score));
-            System.out.println("Mark assigned successfully.");
-        } else {
-            System.out.println("You are not assigned to teach this course.");
-        }
-    }
 
     public void assignCourse(Course course) {
         marksToAssign.put(course, 0);

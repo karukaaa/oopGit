@@ -13,7 +13,11 @@ public class Main {
         Student student = new Student("Anel");
 
         mathTeacher.assignCourse(mathCourse);
-        mathTeacher.assignMark(student, mathCourse, 95);
+        
+        student.enrollCourse(mathCourse);
+        
+        mathTeacher.putMark(student, mathCourse, 30, MarkTypes.ATT1);
+        mathTeacher.putMark(student, mathCourse, 29, MarkTypes.ATT2);
 
 
         student.checkMarks();

@@ -8,7 +8,10 @@ public class Mark {
     private double midtermPoint;
     private double endtermPoint;
     private double finalPoint;
-    private double totalScore;
+    
+    public Mark() {
+    	
+    }
 
     public Mark(Course course, int score) {
         this.course = course;
@@ -20,7 +23,11 @@ public class Mark {
     }
 
     public int getScore() {
+    	score = (int) (firstAttestation + secondAttestation + midtermPoint + endtermPoint + finalPoint);
         return score;
+    }
+    public void setScore(int score) {
+    	this.score = score;
     }
 
     public double getFirstAttestation() {
@@ -28,6 +35,7 @@ public class Mark {
     }
 
     public void setFirstAttestation(double firstAttestation) {
+//    	score = (int) (score-this.firstAttestation + firstAttestation);
         this.firstAttestation = firstAttestation;
     }
 
@@ -36,6 +44,7 @@ public class Mark {
     }
 
     public void setSecondAttestation(double secondAttestation) {
+//    	score = (int) (score-this.secondAttestation + secondAttestation);
         this.secondAttestation = secondAttestation;
     }
 
@@ -44,6 +53,7 @@ public class Mark {
     }
 
     public void setMidtermPoint(double midtermPoint) {
+//    	score = (int) (score-this.midtermPoint + midtermPoint);
         this.midtermPoint = midtermPoint;
     }
 
@@ -52,6 +62,7 @@ public class Mark {
     }
 
     public void setEndtermPoint(double endtermPoint) {
+//    	score = (int) (score-this.endtermPoint + endtermPoint);
         this.endtermPoint = endtermPoint;
     }
 
@@ -60,14 +71,7 @@ public class Mark {
     }
 
     public void setFinalPoint(double finalPoint) {
+//    	score = (int) (score-this.finalPoint + finalPoint);
         this.finalPoint = finalPoint;
-    }
-
-    public double getTotalScore() {
-        return totalScore;
-    }
-
-    public void setTotalScore(double totalScore) {
-        this.totalScore = totalScore;
     }
 }
