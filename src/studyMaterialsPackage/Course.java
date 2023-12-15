@@ -1,4 +1,4 @@
-package studyMaterials;
+package studyMaterialsPackage;
 
 public class Course {
     private String courseCode;

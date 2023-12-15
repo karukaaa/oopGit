@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Vector;
 
 import researchPackage.*;
-import studyMaterials.*;
+import studyMaterialsPackage.*;
 
 
 public class Student extends User implements Researcher{
@@ -104,10 +104,6 @@ public class Student extends User implements Researcher{
 	}
 	
 
-	public String toString() {
-		return super.toString() + " is a student";
-	}
-	
 	public void viewCourses() {
         System.out.println("Viewing available courses as a student.");
     }
@@ -140,5 +136,10 @@ public class Student extends User implements Researcher{
             System.out.println(course.getCourseName() + ": " + mark.getScore());
         }
     }
+	
+
+	public String toString() {
+		return super.toString() + " is a student";
+	}
 	
 }

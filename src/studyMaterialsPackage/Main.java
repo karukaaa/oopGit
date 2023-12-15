@@ -1,4 +1,4 @@
-package studyMaterials;
+package studyMaterialsPackage;
 
 import usersPackage.*;
 
@@ -12,7 +12,6 @@ public class Main {
         Student student = new Student("Anel");
 
         mathTeacher.assignCourse(mathCourse);
-        Mark mark = new Mark(mathCourse, 95);
         mathTeacher.assignMark(student, mathCourse, 95);
 
 

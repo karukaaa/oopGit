@@ -1,4 +1,4 @@
-package studyMaterials;
+package studyMaterialsPackage;
 
 public class Mark {
     private Course course;
