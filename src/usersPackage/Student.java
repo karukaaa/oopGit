@@ -1,17 +1,19 @@
 package usersPackage;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Vector;
 
 import researchPackage.*;
 import studyMaterialsPackage.*;
 
-
 public class Student extends User implements Researcher{
 	
+	private List<Course> courses = new ArrayList<>();
 	private Map<Course, Mark> marks = new HashMap<>();
-	boolean isResearcher = false;
+	private Specialty major;
 
 	public Student() {
 		
@@ -22,10 +24,13 @@ public class Student extends User implements Researcher{
 	public Student(String name,String lastName) {
 		super(name, lastName);
 	}
+	public Student(String name, Specialty major) {
+		super(name);
+		this.major = major;
+	}
 	
 	public void becomingResearcher() {
 		System.out.println(name + " is not yet a researcher");
-		//implement logic to become researcher
 	}
 	
 	
@@ -36,64 +41,59 @@ public class Student extends User implements Researcher{
 
 	@Override
 	public void startProject(String topic, String description) {
-		if(!isResearcher) becomingResearcher();
-		
+		 becomingResearcher();
 	}
 
 	@Override
 	public void printPapers() {
-		if(!isResearcher) becomingResearcher();
+		becomingResearcher();
 	}
 
 	@Override
 	public int calculateHindex() {
-		if(!isResearcher) becomingResearcher();
+		becomingResearcher();
 		return 0;
 	}
 
 	@Override
 	public void modifyProject() {
-		if(!isResearcher) becomingResearcher();
+		becomingResearcher();
 	}
 
 	@Override
 	public void addPaper(String title, String description) {
-		if(!isResearcher) becomingResearcher();
+		becomingResearcher();
 	}
 
 	@Override
 	public void removePaper(ResearchPaper p) {
-		if(!isResearcher) becomingResearcher();
+		becomingResearcher();
 	}
 	public Vector<ResearchProject> getProjects() {
-		if(!isResearcher) becomingResearcher();
+		becomingResearcher();
 		return null;
 	}
 
 	public void setProjects(Vector<ResearchProject> projects) {
-		if(!isResearcher) becomingResearcher();
+		becomingResearcher();
 	}
 
 	public Vector<ResearchPaper> getPapers() {
-		if(!isResearcher) becomingResearcher();
+		becomingResearcher();
 		return null;
 	}
 
 	public void setPapers(Vector<ResearchPaper> papers) {
-		if(!isResearcher) becomingResearcher();
+		becomingResearcher();
 	}
 	
-	public boolean isResearcher() {
-		return isResearcher;
-	}
-
-	public void setResearcher(boolean isResearcher) {
-		this.isResearcher = isResearcher;
-	}
+	public List<Course> getCourses() {
+        return courses;
+    }
 	
 	@Override
 	public void addPaper(ResearchPaper paper) {
-		if(!isResearcher) becomingResearcher();
+		becomingResearcher();
 	}
 
 	
@@ -136,6 +136,17 @@ public class Student extends User implements Researcher{
             System.out.println(course.getCourseName() + ": " + mark.getScore());
         }
     }
+    
+    public void approveRegistration(List<Course> approvedCourses) {
+        for (Course course : approvedCourses) {
+            enrollCourse(course);
+        }
+    }
+    
+    private void enrollCourse(Course course) {
+        courses.add(course);
+    }
+
 	
 
 	public String toString() {

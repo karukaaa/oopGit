@@ -1,26 +1,28 @@
 package usersPackage;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Vector;
 
 import communicationsPackage.*;
 import studyMaterialsPackage.*;
 
+
+
 public class Teacher extends User{
+	private List<Course> courses = new ArrayList<>();
     private Map<Course, Integer> marksToAssign = new HashMap<>();
     public Vector<String> requests;
     public Vector<UrgencyComplaint> urgencyComplaints;
     public Vector<Message> messages;
     
-    {
-    	requests = new Vector<>();
-    	urgencyComplaints = new Vector<>();
-    	messages = new Vector<>();
+    public Teacher() {
+    	
     }
     
-
     public Teacher(String name) {
-        super(name);
+    	super(name);
     }
 
     public void assignMark(Student student, Course course, int score) {
@@ -75,4 +77,11 @@ public class Teacher extends User{
 		return 0;
 	}
 
+	public void addLessonToSchedule(Lesson lesson) {
+		
+    }
+	
+	public String toString() {
+		return super.toString() + " is a teacher";
+	}
 }

@@ -1,6 +1,7 @@
-package usersPackage;
+package testClasses;
 
 import researchPackage.*;
+import usersPackage.*;
 
 public class Test {
 

@@ -1,8 +1,9 @@
-package communicationsPackage;
+package testClasses;
 
 import java.util.Arrays;
 import java.util.Vector;
 
+import communicationsPackage.*;
 import usersPackage.*;
 
 public class MessageTest {

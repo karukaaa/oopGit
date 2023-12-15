@@ -10,7 +10,6 @@ public class ResearcherStudent extends StudentResearcherDecorator{
 	{
 		projects = new Vector<>();
 		papers = new Vector<>();
-		super.setResearcher(true); 
 	}
 	
 	

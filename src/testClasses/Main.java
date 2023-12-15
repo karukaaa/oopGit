@@ -1,5 +1,6 @@
-package studyMaterialsPackage;
+package testClasses;
 
+import studyMaterialsPackage.*;
 import usersPackage.*;
 
 public class Main {
