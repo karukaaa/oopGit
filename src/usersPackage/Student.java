@@ -30,7 +30,7 @@ public class Student extends User implements Researcher{
 	}
 	
 	public void becomingResearcher() {
-		System.out.println(name + " is not yet a researcher");
+		System.out.println(name + " isn't yet a researcher");
 	}
 	
 	
