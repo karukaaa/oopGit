@@ -2,6 +2,7 @@ package researchPackage;
 
 import java.util.Date;
 import java.util.Vector;
+import usersPackage.*;
 
 public class ResearchPaper {
 	String title;
@@ -13,6 +14,7 @@ public class ResearchPaper {
 	Date datePublished;
 	String citationFormat;
 	int citations;
+	public NewsManager manager;
 	
 	{
 		authors = new Vector<>();
@@ -24,6 +26,11 @@ public class ResearchPaper {
 	public ResearchPaper(String title, String description) {
 		this.title = title;
 		this.description = description;
+	}
+	
+	public void publishPaper(ResearchPaper p) {
+		manager.addPaper(p);
+		datePublished = new Date();
 	}
 	
 	
@@ -108,7 +115,7 @@ public class ResearchPaper {
 	
 
 	public String toString(){
-		return title + " " + description;
+		return title + " " + description + datePublished;
 	}
 	
 }

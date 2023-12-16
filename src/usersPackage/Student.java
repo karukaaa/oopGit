@@ -64,8 +64,9 @@ public class Student extends User implements Researcher{
 	}
 
 	@Override
-	public void addPaper(String title, String description) {
+	public ResearchPaper addPaper(String title, String description) {
 		becomingResearcher();
+		return null;
 	}
 
 	@Override
@@ -95,8 +96,9 @@ public class Student extends User implements Researcher{
     }
 	
 	@Override
-	public void addPaper(ResearchPaper paper) {
+	public ResearchPaper addPaper(ResearchPaper paper) {
 		becomingResearcher();
+		return null;
 	}
 
 	

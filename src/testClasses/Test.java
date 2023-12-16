@@ -1,5 +1,7 @@
 package testClasses;
 
+import java.util.Date;
+
 import researchPackage.*;
 import usersPackage.*;
 
@@ -7,21 +9,18 @@ public class Test {
 
 	public static void main(String[] args) {
 
-//		System.out.println(s.isResearcher());
-		
 		ResearcherStudent person = new ResearcherStudent(new Student("Aru"));
-		
-
-		
-//		ResearcherEmployee r = new ResearcherEmployee();
-//		System.out.println(r.toString());
+	
 		
 		person.addPaper("paper title", "this is a research paper");
 		
 		person.getPapers().get(0).appendToPage("text on the page 0.", 0);
-		person.getPapers().get(0).appendToPage(" addition to page 0.", 0);
-		System.out.println(person.getPapers().get(0).getTextFromPage(0));
-//		System.out.println(person.isResearcher());
+		
+		Date date1 = new Date(122, 10, 1); // November 1, 2022 (Year 122 is 2022)
+        Date date2 = new Date(122, 11, 1); // December 1, 2022
+
+        int comparisonResult = date1.compareTo(date2);
+        System.out.println(comparisonResult);
 		
 	}
 

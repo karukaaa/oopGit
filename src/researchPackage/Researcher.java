@@ -5,9 +5,9 @@ import java.util.Vector;
 public interface Researcher {
 	void submitPapers();
 	
-	void addPaper(String title, String description);
+	ResearchPaper addPaper(String title, String description);
 	
-	void addPaper(ResearchPaper paper);
+	ResearchPaper addPaper(ResearchPaper paper);
 	
 	void removePaper(ResearchPaper p);
 	

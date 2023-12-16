@@ -89,9 +89,10 @@ public class ResearcherStudent extends StudentResearcherDecorator{
 	}
 
 	@Override
-	public void addPaper(String title, String description) {
+	public ResearchPaper addPaper(String title, String description) {
 		ResearchPaper newPaper = new ResearchPaper(title, description);
 		papers.add(newPaper);
+		return newPaper;
 	}
 
 	@Override
@@ -105,7 +106,8 @@ public class ResearcherStudent extends StudentResearcherDecorator{
 	}
 
 	@Override
-	public void addPaper(ResearchPaper paper) {
+	public ResearchPaper addPaper(ResearchPaper paper) {
 		papers.add(paper);
+		return paper;
 	}
 }

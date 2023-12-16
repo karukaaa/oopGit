@@ -44,8 +44,8 @@ public abstract class StudentResearcherDecorator extends Student implements Rese
 	}
 
 	@Override
-	public void addPaper(String title, String description) {
-		subject.addPaper(title, description);
+	public ResearchPaper addPaper(String title, String description) {
+		return subject.addPaper(title, description);
 	}
 	
 	public Vector<ResearchProject> getProjects() {

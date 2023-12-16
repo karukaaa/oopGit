@@ -65,9 +65,16 @@ public class ResearcherEmployee implements Researcher {
 	}
 
 	@Override
-	public void addPaper(String title, String description) {
+	public ResearchPaper addPaper(String title, String description) {
 		ResearchPaper newPaper = new ResearchPaper(title, description);
 		papers.add(newPaper);
+		return newPaper;
+	}
+	
+	@Override
+	public ResearchPaper addPaper(ResearchPaper paper) {
+		papers.add(paper);
+		return paper;
 	}
 
 	@Override
@@ -93,11 +100,8 @@ public class ResearcherEmployee implements Researcher {
 	}
 
 	public String toString() {
-		return "im researcher employee";
+		return " is researcher employee";
 	}
 
-	@Override
-	public void addPaper(ResearchPaper paper) {
-		papers.add(paper);
-	}
+	
 }
