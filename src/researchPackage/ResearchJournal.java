@@ -36,6 +36,7 @@ public class ResearchJournal {
 	public void setPapers(Vector<ResearchPaper> papers) {
 		this.papers = papers;
 	}
+	
 	public Set<User> getObservers() {
 		return observers;
 	}
@@ -58,6 +59,7 @@ public class ResearchJournal {
 	public void notifyObservers() {
 		//notifying them
 	}
+	
 	public void addPaper(ResearchPaper paper) {
 		papers.add(paper);
 	}

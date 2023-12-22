@@ -1,7 +1,6 @@
 package researchPackage;
 
 import java.util.Comparator;
-import researchPackage.ResearchPaper;
 
 public class PaperDateComparator implements Comparator<ResearchPaper>{
 

@@ -1,6 +1,7 @@
 package usersPackage;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,7 +10,7 @@ import java.util.Vector;
 import researchPackage.*;
 import studyMaterialsPackage.*;
 
-public class Student extends User implements Researcher{
+public class Student extends User{
 	
 	private List<Course> courses = new ArrayList<>();
 	private Map<Course, Mark> marks = new HashMap<>();
@@ -29,78 +30,15 @@ public class Student extends User implements Researcher{
 		this.major = major;
 	}
 	
-	public void becomingResearcher() {
-		System.out.println(name + " isn't yet a researcher");
-	}
-	
 	
 	public Map<Course, Mark> getMarks() {
 		return marks;
 	}
-	@Override
-	public void submitPapers() {
-		System.out.println();
-	}
 
-	@Override
-	public void startProject(String topic, String description) {
-		 becomingResearcher();
-	}
-
-	@Override
-	public void printPapers() {
-		becomingResearcher();
-	}
-
-	@Override
-	public int calculateHindex() {
-		becomingResearcher();
-		return 0;
-	}
-
-	@Override
-	public void modifyProject() {
-		becomingResearcher();
-	}
-
-	@Override
-	public ResearchPaper addPaper(String title, String description) {
-		becomingResearcher();
-		return null;
-	}
-
-	@Override
-	public void removePaper(ResearchPaper p) {
-		becomingResearcher();
-	}
-	public Vector<ResearchProject> getProjects() {
-		becomingResearcher();
-		return null;
-	}
-
-	public void setProjects(Vector<ResearchProject> projects) {
-		becomingResearcher();
-	}
-
-	public Vector<ResearchPaper> getPapers() {
-		becomingResearcher();
-		return null;
-	}
-
-	public void setPapers(Vector<ResearchPaper> papers) {
-		becomingResearcher();
-	}
 	
 	public List<Course> getCourses() {
         return courses;
     }
-	
-	@Override
-	public ResearchPaper addPaper(ResearchPaper paper) {
-		becomingResearcher();
-		return null;
-	}
-
 	
 	@Override
 	public int compareTo(User o) {
@@ -155,5 +93,6 @@ public class Student extends User implements Researcher{
 	public String toString() {
 		return super.toString() + " is a student";
 	}
+	
 	
 }
