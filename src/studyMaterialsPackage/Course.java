@@ -42,4 +42,30 @@ public class Course {
     public void addTeacher(Teacher teacher) {
         teachers.add(teacher);
     }
+
+	public Faculty getFaculty() {
+		return faculty;
+	}
+
+	public void setFaculty(Faculty faculty) {
+		this.faculty = faculty;
+	}
+
+	public int getYearOfStudy() {
+		return yearOfStudy;
+	}
+
+	public void setYearOfStudy(int yearOfStudy) {
+		this.yearOfStudy = yearOfStudy;
+	}
+
+	public List<Teacher> getTeachers() {
+		return teachers;
+	}
+
+	public void setTeachers(List<Teacher> teachers) {
+		this.teachers = teachers;
+	}
+    
+    
 }
