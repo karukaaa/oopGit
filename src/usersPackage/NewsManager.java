@@ -19,7 +19,7 @@ public class NewsManager extends Manager{
 	static List<ResearchPaper> papers = new ArrayList<>();
 	
 	public NewsManager(String name) {
-		super(name);
+		super(name, ManagerType.NEWS_MANAGER);
 	}
 	
 	
@@ -134,5 +134,12 @@ public class NewsManager extends Manager{
 
 	public String toString() {
 		return super.toString() + " is a news manager";
+	}
+
+
+	@Override
+	public void approveRegistration(Object courses, Student student, boolean intentionToAttend) {
+		// TODO Auto-generated method stub
+		
 	}
 }

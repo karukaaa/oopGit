@@ -9,7 +9,7 @@ public class Test {
 
 	public static void main(String[] args) {
         NewsManager nm = new NewsManager("mr Manager");
-		Teacher teacher = new Teacher("mr Teacher");
+		Teacher teacher = new Teacher("mr Teacher", TeacherType.TRAINEE);
 
 		ResearcherPerson person1 = new ResearcherPerson("Aru");
 		ResearcherPerson person2 = new ResearcherPerson("Ura");

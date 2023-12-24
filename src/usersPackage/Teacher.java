@@ -1,12 +1,9 @@
 package usersPackage;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Vector;
+import java.util.*;
 
 import communicationsPackage.*;
 import studyMaterialsPackage.*;
+
 
 
 
@@ -16,13 +13,16 @@ public class Teacher extends User{
     public Vector<String> requests;
     public Vector<UrgencyComplaint> urgencyComplaints;
     public Vector<Message> messages;
+    private TeacherType type;
+    private List<Lesson> lessons = new ArrayList<>();
     
     public Teacher() {
     	
     }
     
-    public Teacher(String name) {
+    public Teacher(String name, TeacherType type) {
     	super(name);
+    	this.type = type;
     }
 
     public void putMark(Student student, Course course, int score, MarkTypes type) {
@@ -41,16 +41,21 @@ public class Teacher extends User{
             System.out.println("You are not assigned to teach this course.");
         }
     }
-
+    
+    public TeacherType getType() {
+        return type;
+    }
 
     public void assignCourse(Course course) {
         marksToAssign.put(course, 0);
         System.out.println("You are now assigned to teach " + course.getCourseName());
     }
-
-    public void seeNews() {
-        System.out.println("Viewing news as a teacher.");
+    
+    
+    public void addLessonToSchedule(Lesson lesson) {
+        lessons.add(lesson);
     }
+    
 
     public void viewEnrolledStudents() {
         System.out.println("Viewing enrolled students as a teacher.");
@@ -73,12 +78,11 @@ public class Teacher extends User{
 
 	@Override
 	public int compareTo(User o) {
-		// TODO Auto-generated method stub
-		return 0;
+		return super.compareTo(o);
 	}
 
-	public void addLessonToSchedule(Lesson lesson) {
-		
+	public void displayType() {
+        System.out.println("Teacher: " + getName() + ", Type: " + getType());
     }
 	
 	public String toString() {

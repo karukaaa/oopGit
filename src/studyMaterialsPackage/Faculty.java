@@ -1,11 +1,15 @@
 package studyMaterialsPackage;
 
 
-public class Faculty {
-    public static final Faculty SCIENCE = new Faculty();
-    public static final Faculty ENGINEERING = new Faculty();
-	public static Faculty valueOf(String upperCase) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+public enum Faculty {
+    ECONOMY, EDUCATION, IT, HEALTH, ENGINEERING;
+
+    public static boolean isValidFaculty(String facultyInput) {
+        for (Faculty faculty : values()) {
+            if (faculty.name().equals(facultyInput)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

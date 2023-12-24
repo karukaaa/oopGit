@@ -1,5 +1,5 @@
 package usersPackage;
 
 public enum TeacherType {
-    PROFESSOR, DOCTOR
+	PROFESSOR, DOCTOR, TRAINEE, ACADEMIC, PRACTITIONER
 }

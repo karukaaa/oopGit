@@ -9,7 +9,7 @@ public class Main {
         Course mathCourse = new Course("MATH001", "Mathematics 001");
 //        Course bioCourse = new Course("BIOLOGY001", "Biology 001");
 
-        Teacher mathTeacher = new Teacher("Mr.Agai");
+        Teacher mathTeacher = new Teacher("Mr.Agai", TeacherType.ACADEMIC);
         Student student = new Student("Anel");
 
         mathTeacher.assignCourse(mathCourse);

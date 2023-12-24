@@ -14,7 +14,7 @@ public class MessageTest {
         Employee employee2 = new Employee("Alice");
 
         // Creating a teacher
-        Teacher teacher = new Teacher("Professor Smith");
+        Teacher teacher = new Teacher("Professor Smith", TeacherType.PROFESSOR);
 
         // Creating messages
         Message message1 = new Message("Hello, how are you?", MessageType.TEXT);

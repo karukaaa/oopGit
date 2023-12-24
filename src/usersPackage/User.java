@@ -78,6 +78,12 @@ public abstract class User implements Comparable<User>{
 		return id == o.getId();
 	}
 	
+	public int compareTo(User o) {
+		if(id > o.getId()) return 1;
+		if(id < o.getId()) return -1;
+		return 0;
+	}
+	
 	public String toString() {
 		return id + " " + name + " " + lastName;
 	}

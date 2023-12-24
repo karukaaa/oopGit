@@ -1,17 +1,11 @@
 package usersPackage;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Vector;
+import java.util.*;
 
-import researchPackage.*;
 import studyMaterialsPackage.*;
 
+
 public class Student extends User{
-	
 	private List<Course> courses = new ArrayList<>();
 	private Map<Course, Mark> marks = new HashMap<>();
 	private Specialty major;
@@ -42,8 +36,7 @@ public class Student extends User{
 	
 	@Override
 	public int compareTo(User o) {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.name.compareTo(o.getName());
 	}
 	
 
@@ -62,11 +55,13 @@ public class Student extends User{
     public void joinStudentOrganization() {
         System.out.println("Joining student organization as a student.");
     }
-
-    public void seeNews() {
-        System.out.println("Viewing news as a student.");
+    
+    public void registerForCourses(Object courses, ORManager manager, boolean intentionToAttend) {
+        manager.approveRegistration(courses, this, intentionToAttend);
     }
-
+    
+    
+    
 
     public void checkMarks() {
         System.out.println("Marks for " + name + ":");
@@ -77,10 +72,18 @@ public class Student extends User{
         }
     }
     
-    public void approveRegistration(List<Course> approvedCourses) {
-        for (Course course : approvedCourses) {
-            enrollCourse(course);
+    public void displayCourses() {
+        System.out.print("Student name: " + getName() + " (" + major + ", Courses: ");
+
+        for (int i = 0; i < courses.size(); i++) {
+            Course course = courses.get(i);
+            System.out.print(course.getCourseName() + " - Year " + course.getYearOfStudy());
+            if (i < courses.size() - 1) {
+                System.out.print(", ");
+            }
         }
+
+        System.out.println(")");
     }
     
     public void enrollCourse(Course course) {
