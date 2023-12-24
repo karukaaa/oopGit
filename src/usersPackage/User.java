@@ -13,8 +13,6 @@ public abstract class User implements Comparable<User>{
 	
 	//getters for subscriptions
 	
-	//check how to make id final
-	
 	{
 		language = Languages.EN;
 		subscriptions = new Vector<>();
@@ -31,6 +29,11 @@ public abstract class User implements Comparable<User>{
 	public User(String name, String lastName) {
 		this.name = name;
 		this.lastName = lastName;
+	}
+	public User(String name, String lastName, int id) {
+		this.name = name;
+		this.lastName = lastName;
+		this.id = id;
 	}
 	
 	public int getId() {
