@@ -9,12 +9,12 @@ import usersPackage.*;
 public class MessageTest {
 
     public static void main(String[] args) {
-        // Creating employees
+    	// Creating employees
         Employee employee1 = new Employee("John");
         Employee employee2 = new Employee("Alice");
 
         // Creating a teacher
-        Teacher teacher = new Teacher("Professor Smith", TeacherType.PROFESSOR);
+        Teacher teacher = new Teacher("Professor Smith", TeacherType.ACADEMIC);
 
         // Creating messages
         Message message1 = new Message("Hello, how are you?", MessageType.TEXT);
@@ -36,6 +36,6 @@ public class MessageTest {
         employee2.viewOutgoingMessages();
 
         // Viewing messages for the teacher
-        teacher.viewMessages();
-    }
+        teacher.viewWorkMessages();
+}
 }

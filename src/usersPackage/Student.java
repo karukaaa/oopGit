@@ -1,6 +1,7 @@
 package usersPackage;
 
 import java.util.*;
+import java.util.Map.Entry;
 
 import researchPackage.ResearcherPerson;
 import studyMaterialsPackage.*;
@@ -11,11 +12,12 @@ public class Student extends User{
 	private Map<Course, Mark> marks = new HashMap<>();
 	private Specialty major;
 	private int level;
-	private int failedCourses;
+	private int failedCourses=0;
 	private List<Lesson> lessonSchedule = new ArrayList<>();
 	private Specialty specialty;
 	private boolean isResearcher;
 	private ResearcherPerson research;
+	private int totalCredits=0;
 
 	public Student() {
 		
@@ -23,7 +25,7 @@ public class Student extends User{
 	public Student(String name) {
 		super(name);
 	}
-	public Student(String name,String lastName) {
+	public Student(String name, String lastName) {
 		super(name, lastName);
 	}
 	public Student(String name, Specialty major) {
@@ -31,6 +33,13 @@ public class Student extends User{
 		this.major = major;
 	}
 	
+	public Student(int studentId, Specialty major, String name, int level) {
+		super();
+		this.id = studentId;
+		this.major = major;
+		this.name = name;
+		this.level = level;
+	}
 	
 	
 	public Specialty getMajor() {
@@ -134,6 +143,57 @@ public class Student extends User{
         marks.put(course, new Mark(course, 0));
     }
 
+    
+    public String viewInfoAboutTeacher(Teacher teacher) {
+		String teacherInfo = "Information about the teacher:\n";
+
+		teacherInfo += teacher.toString();
+
+		return teacherInfo;
+	}
+    
+    public void viewTranscript() {
+        if (marks != null && !marks.isEmpty()) {
+            System.out.println("Transcript:");
+
+            for (Entry<Course, Mark> entry : marks.entrySet()) {
+                Course course = entry.getKey();
+                Mark mark = entry.getValue();
+                System.out.println("Course: " + course + " " + mark.getFirstAttestation() + " " + mark.getSecondAttestation() + " " + mark.getFinalPoint());
+            }
+
+            System.out.println("Total Credits: " + calculateTotalCredits());
+        } else {
+            System.out.println("No transcript available yet.");
+        }
+    }
+
+    private int calculateTotalCredits() {
+        int totalCredits = 0;
+        for (Course cur : courses) {
+            totalCredits += cur.getCredits();
+        }
+        return totalCredits;
+    }
+
+    public Transcript getTranscript() {
+		if (marks != null) {
+			return new Transcript(marks, totalCredits);
+		} else {
+			System.out.println("No transcript available yet.");
+			return null;
+		}
+
+	}
+    
+    public boolean hasExceededCreditLimit() {
+		return totalCredits > 21;
+	}
+
+	// Method to check if the student has exceeded the allowed failed courses
+	public boolean hasExceededFailedCoursesLimit() {
+		return failedCourses > 3;
+	}
 
     public void becomeResearcher() {
     	research = new ResearcherPerson(this);
@@ -143,6 +203,11 @@ public class Student extends User{
     public ResearcherPerson getIsResearcher() {
     	if(isResearcher) return research;
     	else return null;
+    }
+    
+    public void rateTeacher(Teacher teacher, int rate) {
+    	if(rate<1 || rate>5) System.out.println("No such rating can be put");
+    	else teacher.addRating(rate);
     }
     
 	public String toString() {

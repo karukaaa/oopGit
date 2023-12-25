@@ -21,6 +21,7 @@ public class Mark {
     public Course getCourse() {
         return course;
     }
+    
 
     public int getScore() {
     	score = (int) (firstAttestation + secondAttestation + midtermPoint + endtermPoint + finalPoint);
@@ -35,8 +36,7 @@ public class Mark {
     }
 
     public void setFirstAttestation(double firstAttestation) {
-//    	score = (int) (score-this.firstAttestation + firstAttestation);
-        this.firstAttestation = firstAttestation;
+    	this.firstAttestation = firstAttestation;
     }
 
     public double getSecondAttestation() {
@@ -44,8 +44,7 @@ public class Mark {
     }
 
     public void setSecondAttestation(double secondAttestation) {
-//    	score = (int) (score-this.secondAttestation + secondAttestation);
-        this.secondAttestation = secondAttestation;
+    	this.secondAttestation = secondAttestation;
     }
 
     public double getMidtermPoint() {
@@ -53,8 +52,7 @@ public class Mark {
     }
 
     public void setMidtermPoint(double midtermPoint) {
-//    	score = (int) (score-this.midtermPoint + midtermPoint);
-        this.midtermPoint = midtermPoint;
+    	this.midtermPoint = midtermPoint;
     }
 
     public double getEndtermPoint() {
@@ -62,8 +60,7 @@ public class Mark {
     }
 
     public void setEndtermPoint(double endtermPoint) {
-//    	score = (int) (score-this.endtermPoint + endtermPoint);
-        this.endtermPoint = endtermPoint;
+    	this.endtermPoint = endtermPoint;
     }
 
     public double getFinalPoint() {
@@ -71,7 +68,24 @@ public class Mark {
     }
 
     public void setFinalPoint(double finalPoint) {
-//    	score = (int) (score-this.finalPoint + finalPoint);
         this.finalPoint = finalPoint;
+    }
+    
+    public boolean isPass() {
+        return score >= 60;
+    }
+    
+    public String calculateGrade() {
+        if (score >= 90) {
+            return "A";
+        } else if (score >= 80) {
+            return "B";
+        } else if (score >= 70) {
+            return "C";
+        } else if (score >= 60) {
+            return "D";
+        } else {
+            return "F";
+        }
     }
 }

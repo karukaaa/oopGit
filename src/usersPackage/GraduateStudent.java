@@ -8,6 +8,8 @@ public class GraduateStudent extends Student{
 	
 	ResearcherPerson supervisor;
 	ResearcherPerson research;
+	GraduateStudentType type;
+//	DiplomaProject diplomaProject
 	
 	{
 		research = new ResearcherPerson(this);
@@ -27,6 +29,17 @@ public class GraduateStudent extends Student{
 	}
 	public void setResearch(ResearcherPerson research) {
 		this.research = research;
+	}
+
+	
+
+	public GraduateStudentType getType() {
+		return type;
+	}
+
+
+	public void setType(GraduateStudentType type) {
+		this.type = type;
 	}
 
 
