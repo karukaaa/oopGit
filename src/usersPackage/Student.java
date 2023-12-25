@@ -2,6 +2,7 @@ package usersPackage;
 
 import java.util.*;
 
+import researchPackage.ResearcherPerson;
 import studyMaterialsPackage.*;
 
 
@@ -9,6 +10,12 @@ public class Student extends User{
 	private List<Course> courses = new ArrayList<>();
 	private Map<Course, Mark> marks = new HashMap<>();
 	private Specialty major;
+	private int level;
+	private int failedCourses;
+	private List<Lesson> lessonSchedule = new ArrayList<>();
+	private Specialty specialty;
+	private boolean isResearcher;
+	private ResearcherPerson research;
 
 	public Student() {
 		
@@ -25,6 +32,52 @@ public class Student extends User{
 	}
 	
 	
+	
+	public Specialty getMajor() {
+		return major;
+	}
+	public void setMajor(Specialty major) {
+		this.major = major;
+	}
+	
+	public int getLevel() {
+		return level;
+	}
+	public void setLevel(int level) {
+		this.level = level;
+	}
+	
+	public int getFailedCourses() {
+		return failedCourses;
+	}
+	public void setFailedCourses(int failedCourses) {
+		this.failedCourses = failedCourses;
+	}
+	public List<Lesson> getLessonSchedule() {
+		return lessonSchedule;
+	}
+	public void setLessonSchedule(List<Lesson> lessonSchedule) {
+		this.lessonSchedule = lessonSchedule;
+	}
+	
+	public Specialty getSpecialty() {
+		return specialty;
+	}
+	public void setSpecialty(Specialty specialty) {
+		this.specialty = specialty;
+	}
+	public boolean isResearcher() {
+		return isResearcher;
+	}
+	public void setResearcher(boolean isResearcher) {
+		this.isResearcher = isResearcher;
+	}
+	public void setCourses(List<Course> courses) {
+		this.courses = courses;
+	}
+	public void setMarks(Map<Course, Mark> marks) {
+		this.marks = marks;
+	}
 	public Map<Course, Mark> getMarks() {
 		return marks;
 	}
@@ -39,15 +92,6 @@ public class Student extends User{
 		return this.name.compareTo(o.getName());
 	}
 	
-
-	public void viewCourses() {
-        System.out.println("Viewing available courses as a student.");
-    }
-
-    public void viewMarkDetails() {
-        System.out.println("Viewing mark details as a student.");
-    }
-
     public void putAttendance() {
         System.out.println("Putting attendance as a student.");
     }
@@ -59,8 +103,7 @@ public class Student extends User{
     public void registerForCourses(Object courses, ORManager manager, boolean intentionToAttend) {
         manager.approveRegistration(courses, this, intentionToAttend);
     }
-    
-    
+      
     
 
     public void checkMarks() {
@@ -91,8 +134,17 @@ public class Student extends User{
         marks.put(course, new Mark(course, 0));
     }
 
-	
 
+    public void becomeResearcher() {
+    	research = new ResearcherPerson(this);
+    	isResearcher = true;
+    }
+    
+    public ResearcherPerson getIsResearcher() {
+    	if(isResearcher) return research;
+    	else return null;
+    }
+    
 	public String toString() {
 		return super.toString() + " is a student";
 	}

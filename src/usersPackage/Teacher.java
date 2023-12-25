@@ -2,19 +2,20 @@ package usersPackage;
 import java.util.*;
 
 import communicationsPackage.*;
+import researchPackage.ResearcherPerson;
 import studyMaterialsPackage.*;
-
-
 
 
 public class Teacher extends User{
 	private List<Course> courses = new ArrayList<>();
     private Map<Course, Integer> marksToAssign = new HashMap<>();
-    public Vector<String> requests;
-    public Vector<UrgencyComplaint> urgencyComplaints;
-    public Vector<Message> messages;
+    public Vector<String> requests = new Vector<>();
+    public Vector<UrgencyComplaint> urgencyComplaints = new Vector<>();
+    public Vector<Message> messages = new Vector<>();
     private TeacherType type;
     private List<Lesson> lessons = new ArrayList<>();
+    private boolean isResearcher;
+    private ResearcherPerson research;
     
     public Teacher() {
     	
@@ -83,6 +84,16 @@ public class Teacher extends User{
 
 	public void displayType() {
         System.out.println("Teacher: " + getName() + ", Type: " + getType());
+    }
+	
+	public void becomeResearcher() {
+    	research = new ResearcherPerson(this);
+    	isResearcher = true;
+    }
+    
+    public ResearcherPerson getIsResearcher() {
+    	if(isResearcher) return research;
+    	else return null;
     }
 	
 	public String toString() {
