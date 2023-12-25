@@ -6,7 +6,7 @@ import researchPackage.ResearcherPerson;
 import studyMaterialsPackage.*;
 
 
-public class Teacher extends User{
+public class Teacher extends Employee{
 	private List<Course> courses = new ArrayList<>();
     private Map<Course, Integer> marksToAssign = new HashMap<>();
     public Vector<String> requests = new Vector<>();
@@ -16,10 +16,13 @@ public class Teacher extends User{
     private List<Lesson> lessons = new ArrayList<>();
     private boolean isResearcher;
     private ResearcherPerson research;
+    private double rating;
+    private int rateTimes=0;
     
     public Teacher() {
-    	
+    	super();
     }
+
     
     public Teacher(String name, TeacherType type) {
     	super(name);
@@ -61,21 +64,6 @@ public class Teacher extends User{
     public void viewEnrolledStudents() {
         System.out.println("Viewing enrolled students as a teacher.");
     }
-    
-    // Method to send messages
-    public void sendMessages(Vector<Message> messages) {
-        // Assuming you want to add the messages to the Teacher's messages vector
-        this.messages.addAll(messages);
-		System.out.println(name + " sent messages.");
-    }
-
-    // Method to view messages
-    public void viewMessages() {
-        System.out.println("Messages for " + name + ":");
-        for (Message message : messages) {
-            System.out.println("Type: " + message.getMessageType() + ", Content: " + message.getText());
-        }
-    }
 
 	@Override
 	public int compareTo(User o) {
@@ -94,6 +82,14 @@ public class Teacher extends User{
     public ResearcherPerson getIsResearcher() {
     	if(isResearcher) return research;
     	else return null;
+    }
+    
+    public void addRating(int rating) {
+		rateTimes++;
+		rating+=rating;
+	}
+    public double getRating() {
+    	return rating/rateTimes;
     }
 	
 	public String toString() {

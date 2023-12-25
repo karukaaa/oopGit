@@ -18,6 +18,10 @@ public class Employee extends User {
     	outgoingMessages = new Vector<>();
     }
     
+    public Employee() {
+    	
+    }
+    
     public Employee(String name) {
         super(name);
         this.workMessages = workMessages != null ? workMessages : new Vector<>();
@@ -37,7 +41,7 @@ public class Employee extends User {
     public void viewWorkMessages() {
         System.out.println("Work messages for " + name + ":");
         for (Message message : workMessages) {
-            System.out.println("Type: " + message.getMessageType() + ", Content: " + message.getText());
+            System.out.println("Type: " + message.getTypeOfMessage() + ", Content: " + message.getText());
         }
     }
 	
@@ -56,7 +60,7 @@ public class Employee extends User {
     public void viewIncomingMessages() {
         System.out.println("Incoming messages for " + name + ":");
         for (Message message : incomingMessages) {
-            System.out.println("Type: " + message.getMessageType() + ", Content: " + message.getText());
+            System.out.println("Type: " + message.getTypeOfMessage() + ", Content: " + message.getText());
         }
     }
     
@@ -64,13 +68,12 @@ public class Employee extends User {
     public void viewOutgoingMessages() {
         System.out.println("Outgoing messages from " + name + ":");
         for (Message message : outgoingMessages) {
-            System.out.println("Type: " + message.getMessageType() + ", Content: " + message.getText());
+            System.out.println("Type: " + message.getTypeOfMessage() + ", Content: " + message.getText());
         }
     }
 
 	@Override
 	public int compareTo(User o) {
-		// TODO Auto-generated method stub
-		return 0;
+		return super.compareTo(o);
 	}
 }

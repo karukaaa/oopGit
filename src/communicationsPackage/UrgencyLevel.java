@@ -1,6 +1,6 @@
 package communicationsPackage;
 
-public enum Urgency {
+public enum UrgencyLevel {
    LOW,
    MEDIUM,
    HIGH, NORMAL

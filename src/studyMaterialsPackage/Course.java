@@ -10,6 +10,7 @@ public class Course {
     private String courseName;
     private Faculty faculty;
     private int yearOfStudy;
+    private int credits;
     private List<Teacher> teachers = new ArrayList<>();
 
     public Course(String courseCode, String courseName) {
@@ -65,6 +66,14 @@ public class Course {
 
 	public void setTeachers(List<Teacher> teachers) {
 		this.teachers = teachers;
+	}
+
+	public int getCredits() {
+		return credits;
+	}
+
+	public void setCredits(int credits) {
+		this.credits = credits;
 	}
     
     

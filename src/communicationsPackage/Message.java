@@ -1,37 +1,54 @@
 package communicationsPackage;
 
+import usersPackage.Employee;
+
 public class Message {
 	public MessageType typeOfMessage;
 	public String topic;
-	public Urgency urgency;
+	public UrgencyLevel urgency;
 	public String text;
+	public Employee sender;
 	
-	Message(MessageType typeOfMessage, String topic, Urgency urgency, String text) {
+	public Message() {
+		
+	}
+	public Message(String text, MessageType type) {
+		typeOfMessage = type;
+		this.text = text;
+	}
+	public Message(MessageType typeOfMessage, String topic, UrgencyLevel urgency, String text, Employee sender) {
 		this.typeOfMessage = typeOfMessage;
 		this.topic = topic;
 		this.urgency = urgency;
 		this.text = text;
+		this.sender = sender;
 	}
-
-	public Message(String string, MessageType text2) {
-		// TODO Auto-generated constructor stub
+	public MessageType getTypeOfMessage() {
+		return typeOfMessage;
 	}
-
-	public String getMessageType() {
-		// TODO Auto-generated method stub
-		return null;
+	public void setTypeOfMessage(MessageType typeOfMessage) {
+		this.typeOfMessage = typeOfMessage;
 	}
-
+	public String getTopic() {
+		return topic;
+	}
+	public void setTopic(String topic) {
+		this.topic = topic;
+	}
+	public UrgencyLevel getUrgency() {
+		return urgency;
+	}
+	public void setUrgency(UrgencyLevel urgency) {
+		this.urgency = urgency;
+	}
 	public String getText() {
-		// TODO Auto-generated method stub
-		return null;
+		return text;
 	}
-
-	public Object getUrgency() {
-		// TODO Auto-generated method stub
-		return null;
+	public void setText(String text) {
+		this.text = text;
 	}
 	
-	
-	
+	public String toString() {
+		return topic + " " + text;
+	}
 }
