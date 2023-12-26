@@ -76,5 +76,7 @@ public class Course {
 		this.credits = credits;
 	}
     
-    
+    public String toString() {
+    	return this.courseCode + " " + this.courseName;
+    }
 }

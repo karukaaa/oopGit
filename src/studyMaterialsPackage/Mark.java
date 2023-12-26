@@ -88,4 +88,8 @@ public class Mark {
             return "F";
         }
     }
+    
+    public String toString() {
+    	return this.firstAttestation + " " + this.secondAttestation + " " + this.finalPoint;
+    }
 }

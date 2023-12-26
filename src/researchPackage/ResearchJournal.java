@@ -5,7 +5,7 @@ import java.util.Set;
 import java.util.Vector;
 
 import usersPackage.*;
-//this would also be observer pattern
+
 public class ResearchJournal {
 	String journalName;
 	Vector<ResearchPaper> papers;
@@ -65,5 +65,11 @@ public class ResearchJournal {
 	}
 	public void removePaper(ResearchPaper paper) {
 		papers.remove(paper);
+	}
+	
+	public void printJournal() {
+		for(ResearchPaper cur : papers) {
+			System.out.println(cur.toString());
+		}
 	}
 }
