@@ -2,6 +2,9 @@ package researchPackage;
 
 import java.util.Comparator;
 
+/**
+ * Comparator helps to sort ResearchPaper based on their citation count in ascending order
+ */
 public class PaperCitationsComparator implements Comparator<ResearchPaper>{
 
 	@Override

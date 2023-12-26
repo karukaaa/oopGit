@@ -134,18 +134,6 @@ public class NewsManager extends Manager {
          */
     }
 
-    
-    public void addNews(NewsTopics topic, String title, String text) {
-        News newNews = new News(topic, title, text);
-        addNews(newNews);
-        /**
-         * Adds a news item to the list of news with the specified topic, title, and text.
-         *
-         * @param topic The topic of the news.
-         * @param title The title of the news.
-         * @param text  The text of the news.
-         */
-    }
 
     /**
      * Adds a news item to the list of news with the specified topic, title, text, and comment.
@@ -153,10 +141,9 @@ public class NewsManager extends Manager {
      * @param topic   The topic of the news.
      * @param title   The title of the news.
      * @param text    The text of the news.
-     * @param comment The comment on the news.
      */
-    public void addNews(NewsTopics topic, String title, String text, String comment) {
-        News newNews = new News(topic, title, text, comment);
+    public void addNews(NewsTopics topic, String title, String text) {
+        News newNews = new News(topic, title, text);
         addNews(newNews);
     }
 
@@ -175,7 +162,7 @@ public class NewsManager extends Manager {
     public void printNews() {
         for (News cur : news) {
             System.out.println(cur + " - " + cur.getText());
-            if (cur.getComment() != null) System.out.println(cur.getComment());
+            cur.printComments();
         }
     }
 

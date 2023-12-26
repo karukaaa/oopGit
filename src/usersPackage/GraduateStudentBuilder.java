@@ -11,10 +11,25 @@ public class GraduateStudentBuilder extends StudentBuilder{
 	GraduateStudentType type;
 	DiplomaProject diplomaProject;
 	
+	/**
+	 * Constructor for a GraduateStudentBuilder with the name and student ID.
+     * @param name The name of the student.
+     * @param studentId The ID of the student.
+	 * @param name
+	 * @param studentId
+	 */
+	
 	public GraduateStudentBuilder(String name, int studentId) {
     	super(name, studentId);
     }
 
+	/**
+     * Constructs a GraduateStudentBuilder with specific attributes.
+     * @param studentId The ID of the student.
+     * @param major The major specialty of the student.
+     * @param name The name of the student.
+     * @param level The level of the student.
+     */
 	public GraduateStudentBuilder(int studentId, Specialty major, String name, int level) {
 		super(studentId, major, name, level);
 	}

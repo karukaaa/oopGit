@@ -1,17 +1,17 @@
 package studyMaterialsPackage;
 /**
  * The MarkTypes enumeration represents different types of academic marks or assessments.
- * It includes common mark types such as attendance, midterms, and finals.
+ * It includes common mark types such as attestation, midterms, and finals.
  */
 public enum MarkTypes
  {
     /**
-     * First attendance mark.
+     * First attestation mark.
      */
 	ATT1,
 
     /**
-     * Second attendance mark.
+     * Second attestation mark.
      */
     ATT2,
 

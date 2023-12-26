@@ -1,7 +1,9 @@
 package researchPackage;
 
 import java.util.Comparator;
-
+/**
+ * Comparator helps to sort ResearchPaper based on their publishedDate from oldest to newest
+ */
 public class PaperDateComparator implements Comparator<ResearchPaper>{
 
 	@Override

@@ -4,6 +4,9 @@ import java.util.*;
 import researchPackage.ResearcherPerson;
 import studyMaterialsPackage.*;
 
+/** 
+ * StudentBuilder class is a Builder pattern, helps to create new instances of Student
+ */
 public class StudentBuilder extends User{
 	
 	public List<Course> courses = new ArrayList<>();
@@ -17,17 +20,29 @@ public class StudentBuilder extends User{
     public ResearcherPerson research;
     public int totalCredits = 0;
     
+    /**
+     * Constructs a StudentBuilder with the name and student ID.
+     * @param name The name of the student.
+     * @param studentId The ID of the student.
+     */
     public StudentBuilder(String name, int studentId) {
-    	this.name = name;
-    	this.id = studentId;
+        this.name = name;
+        this.id = studentId;
     }
-    
+
+    /**
+     * Constructs a StudentBuilder with specific attributes.
+     * @param studentId The ID of the student.
+     * @param major The major specialty of the student.
+     * @param name The name of the student.
+     * @param level The level of the student.
+     */
     public StudentBuilder(int studentId, Specialty major, String name, int level) {
-		this.id = studentId;
-		this.major = major;
-		this.name = name;
-		this.level = level;
-	}
+        this.id = studentId;
+        this.major = major;
+        this.name = name;
+        this.level = level;
+    }
 
 	public StudentBuilder setCourses(List<Course> courses) {
 		this.courses = courses;
@@ -78,9 +93,5 @@ public class StudentBuilder extends User{
 		this.totalCredits = totalCredits;
 		return this;
 	}
-    
-    public Student build() {
-    	return new Student(this);
-    }
 	
 }

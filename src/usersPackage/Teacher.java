@@ -27,6 +27,10 @@ public class Teacher extends Employee{
     public Teacher(String name, TeacherType type) {
     	super(name);
     	this.type = type;
+    	if(type.equals(TeacherType.PROFESSOR)) {
+    		isResearcher = true;
+    		research = new ResearcherPerson(this);
+    	}
     }
 
     public void putMark(Student student, Course course, int score, MarkTypes type) {

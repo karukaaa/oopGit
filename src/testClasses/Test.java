@@ -26,9 +26,9 @@ public class Test {
 		paper2.publishPaper();
 		paper3.publishPaper();
 				
-		nm.addNews(NewsTopics.ACADEMIC, "Title1", "text for news", "comment");
+		nm.addNews(NewsTopics.ACADEMIC, "Title1", "text for news");
 		nm.addNews(NewsTopics.RESEARCH, "Title2", "text for news");
-		nm.addNews(NewsTopics.GENERAL, "Title3", "text for news", "comment");
+		nm.addNews(NewsTopics.GENERAL, "Title3", "text for news");
 		nm.addNews(NewsTopics.RESEARCH, "Title4", "text for news");
 		
 		nm.printNews();

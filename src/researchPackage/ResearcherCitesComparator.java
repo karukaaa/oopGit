@@ -1,7 +1,9 @@
 package researchPackage;
 
 import java.util.Comparator;
-
+/**
+ * Comparator helps to sort ResearcherPersons based on their citation count in ascending order
+ */
 public class ResearcherCitesComparator implements Comparator<ResearcherPerson>{
 
 
