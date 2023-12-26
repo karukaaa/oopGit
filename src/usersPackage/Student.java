@@ -16,29 +16,42 @@ public class Student extends User{
 	private List<Lesson> lessonSchedule = new ArrayList<>();
 	private Specialty specialty;
 	private boolean isResearcher;
-	private ResearcherPerson research;
+	protected ResearcherPerson research;
 	private int totalCredits=0;
 
-	public Student() {
-		
-	}
-	public Student(String name) {
-		super(name);
-	}
-	public Student(String name, String lastName) {
-		super(name, lastName);
-	}
-	public Student(String name, Specialty major) {
-		super(name);
-		this.major = major;
-	}
+//	public Student() {
+//		
+//	}
+//	public Student(String name) {
+//		super(name);
+//	}
+//	public Student(String name, String lastName) {
+//		super(name, lastName);
+//	}
+//	public Student(String name, Specialty major) {
+//		super(name);
+//		this.major = major;
+//	}
+//	
+//	public Student(int studentId, Specialty major, String name, int level) {
+//		super();
+//		this.id = studentId;
+//		this.major = major;
+//		this.name = name;
+//		this.level = level;
+//	}
 	
-	public Student(int studentId, Specialty major, String name, int level) {
-		super();
-		this.id = studentId;
-		this.major = major;
-		this.name = name;
-		this.level = level;
+	public Student(StudentBuilder builder) {
+		this.courses = builder.courses;
+        this.marks = builder.marks;
+        this.major = builder.major;
+        this.level = builder.level;
+        this.failedCourses = builder.failedCourses;
+        this.lessonSchedule = builder.lessonSchedule;
+        this.specialty = builder.specialty;
+        this.isResearcher = builder.isResearcher;
+        this.research = builder.research;
+        this.totalCredits = builder.totalCredits;
 	}
 	
 	

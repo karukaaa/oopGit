@@ -1,5 +1,6 @@
 package studyMaterialsPackage;
 
+import java.util.ArrayList;
 import java.util.List;
 import usersPackage.GraduateStudent;
 import researchPackage.*;
@@ -9,6 +10,15 @@ import researchPackage.*;
 public class DiplomaProject {
 	private GraduateStudent student;
 	private List<ResearchPaper> publishedPapers;
+	
+	/**
+	 * constructor with only parameter graduate student
+	 * @param student
+	 */
+	public DiplomaProject(GraduateStudent student) {
+	    this.student = student;
+	    this.publishedPapers = new ArrayList<>();
+	}
 	
 	/**
 	 * constructor

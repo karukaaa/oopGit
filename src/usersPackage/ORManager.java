@@ -61,8 +61,8 @@ public class ORManager extends Manager implements CanViewAcademicInfo {
     * @param name  The name of the student.
     * @param major The major or field of study for the student.
     */
-    public void addStudent(String name, String major) {
-        Student newStudent = new Student(name, major);
+    public void addStudent(int studentId, String name) {
+        Student newStudent = new Student(new StudentBuilder(name, studentId));
         students.add(newStudent); 
     }
 
@@ -141,10 +141,10 @@ public class ORManager extends Manager implements CanViewAcademicInfo {
         for (int i = 0; i < numStudents; i++) {
             System.out.print("Student Name: ");
             String name = scanner.nextLine();
-            System.out.print("Major: ");
-            String major = scanner.nextLine();
+            System.out.print("StudentId: ");
+            int studentId = scanner.nextInt();
 
-            addStudent(name, major);
+            addStudent(studentId, name);
         }
     }
 

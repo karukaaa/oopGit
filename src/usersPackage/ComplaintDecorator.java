@@ -7,7 +7,7 @@ public class ComplaintDecorator extends Student {
 	 private Student student;
 	 
 	public ComplaintDecorator(int studentId, Specialty major, String name, int level, Student student) {
-		super(studentId, major, name, level);
+		super(new StudentBuilder(studentId, major, name, level));
 		this.student = student;
 	}
 	

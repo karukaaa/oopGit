@@ -10,7 +10,7 @@ public class Main {
 //        Course bioCourse = new Course("BIOLOGY001", "Biology 001");
 
         Teacher mathTeacher = new Teacher("Mr.Agai", TeacherType.ACADEMIC);
-        Student student = new Student("Anel");
+        Student student = new Student(new StudentBuilder(0, null, null, 0).setResearcher(true));
 
         mathTeacher.assignCourse(mathCourse);
         
@@ -21,5 +21,7 @@ public class Main {
 
 
         student.checkMarks();
+        
+        GraduateStudent s = new GraduateStudent(new GraduateStudentBuilder("ame", 1).setType(GraduateStudentType.PHD));
     }
 }
